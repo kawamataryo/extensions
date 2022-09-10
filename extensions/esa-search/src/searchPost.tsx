@@ -19,14 +19,8 @@ const config = [
   },
 ].filter(({ team, token }) => team && token);
 
-type Props = {
-  arguments: {
-    keyword: string;
-  };
-};
-
-export default function Command(props: Props) {
-  const [searchText, setSearchText] = useState(props.arguments.keyword || "");
+export default function Command() {
+  const [searchText, setSearchText] = useState("");
   const [configNumber, setConfigNumber] = useState(0);
   const [isShowingDetail, setIsShowingDetail] = useState(preferences.isShowDetail === "true");
 
@@ -38,7 +32,7 @@ export default function Command(props: Props) {
     const teamName = config[configNumber].team;
     const {
       data: { posts: postsData },
-    } = await client.getPosts({ teamName, sort: "best_match", q, perPage: 50 });
+    } = await client.getPosts({ teamName, sort: "best_match", q, perPage: Number(preferences.perPage) });
 
     return postsData;
   };

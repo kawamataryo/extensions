@@ -4,4 +4,5 @@ type Preferences = {
   secondaryTeamName: string;
   secondaryToken: string;
   isShowDetail: string;
+  perPage: string;
 };
