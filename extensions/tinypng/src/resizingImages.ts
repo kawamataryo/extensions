@@ -136,7 +136,7 @@ const _compressAndResizeImage = async (
 
   let outputDir = dirname(filePath);
   if (!preferences.overwrite) {
-    outputDir = join(dirname(filePath), "compressed-images");
+    outputDir = join(dirname(filePath), preferences.destinationFolder);
     if (!existsSync(outputDir)) {
       mkdirSync(outputDir);
     }

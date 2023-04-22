@@ -57,6 +57,14 @@
       "required": true
     },
     {
+      "title": "Destination Folder",
+      "name": "destinationFolder",
+      "description": "Set Destination Folder.",
+      "type": "textfield",
+      "required": true,
+      "default": "compressed-images"
+    },
+    {
       "title": "Options",
       "name": "overwrite",
       "description": "Whether to overwrite the original image file.",
